@@ -100,7 +100,8 @@ let config = {
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
-    fontWeight: '600'
+    fontWeight: '600',
+    height: 20
   },
   defaultStyleTextWrapper: {
     padding: 0,
@@ -111,7 +112,7 @@ let config = {
     height: 'calc(100% - 10px)'
   },
   defaultStyleText: {
-    margin: '10px 0px 0px 0px',
+    margin: '5px 0px 0px 0px',
     overflow: 'hidden',
     cursor: 'default',
     flexGrow: 1,
@@ -120,7 +121,7 @@ let config = {
     '-webkitBoxOrient': 'vertical'
   },
   defaultStyleContextMessage: {
-    height: 25,
+    height: 15,
     textAlign: 'right',
     paddingRight: 0,
     paddingTop: 10,
@@ -245,7 +246,7 @@ let latestID = 0
 
 function notify(notification, options) {
   setConfig(options || {})
-  
+
   notification.id = latestID
   latestID++
   animationQueue.push({
