@@ -245,21 +245,15 @@ let latestID = 0
 
 function notify(notification, options) {
   setConfig(options || {})
-  // Is it an object and only one argument?
-  if (arguments.length === 1 && typeof notification === 'object') {
-    // Use object instead of supplied parameters
-    notification.id = latestID
-    latestID++
-    animationQueue.push({
-      func: showNotification,
-      args: [ notification ]
-    })
-    return notification.id
-  } else {
-    // Since 1.0.0 all notification parameters need to be passed
-    // as object.
-    log('electron-notify: ERROR notify() only accepts a single object with notification parameters.')
-  }
+  
+  notification.id = latestID
+  latestID++
+  animationQueue.push({
+    func: showNotification,
+    args: [ notification ]
+  })
+  return notification.id
+ 
 }
 
 function showNotification(notificationObj) {
