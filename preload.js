@@ -14,6 +14,7 @@ function setStyle(config) {
   let text = notiDoc.getElementById('text')
   let close = notiDoc.getElementById('close')
   let message = notiDoc.getElementById('message')
+  let contextMessage = notiDoc.getElementById('contextMessage')
   // Default style
   setStyleOnDomElement(config.defaultStyleContainer, container)
   // Size and radius
@@ -37,6 +38,7 @@ function setStyle(config) {
   setStyleOnDomElement(config.defaultStyleTextWrapper, text)
   setStyleOnDomElement(config.defaultStyleTitle, title)
   setStyleOnDomElement(config.defaultStyleText, message)
+  setStyleOnDomElement(config.contextMessage, contextMessage)
 }
 
 function setContents(event, notificationObj) {
@@ -58,6 +60,9 @@ function setContents(event, notificationObj) {
   // message
   let messageDoc = notiDoc.getElementById('message')
   messageDoc.innerHTML = notificationObj.text || ''
+
+  let contextMessageDoc = notiDoc.getElementById('contextMessage')
+  contextMessageDoc.innerHTML = notificationObj.contextMessage || ''
   // Image
   let imageDoc = notiDoc.getElementById('image')
   if (notificationObj.image) {
@@ -69,7 +74,6 @@ function setContents(event, notificationObj) {
   // Close button
   let closeButton = notiDoc.getElementById('close')
   closeButton.addEventListener('click', function(event) {
-    console.log('close')
     event.stopPropagation()
     ipc.send('electron-notify-close', winId, notificationObj)
   })

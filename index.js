@@ -59,8 +59,8 @@ let config = {
   defaultStyleContainer: {
     backgroundColor: '#f0f0f0',
     overflow: 'hidden',
-    padding: 8,
-    border: '1px solid #CCC',
+    padding: 3,
+    border: 0,
     fontFamily: 'Arial',
     fontSize: 12,
     position: 'relative',
@@ -71,7 +71,9 @@ let config = {
     float: 'left',
     height: 40,
     width: 40,
-    marginRight: 10,
+    marginRight: 20,
+    marginLeft: 10,
+    marginTop: 10
   },
   defaultStyleImage: {
     overflow: 'hidden',
@@ -84,16 +86,29 @@ let config = {
     position: 'absolute',
     top: 1,
     right: 3,
-    fontSize: 11,
-    color: '#CCC'
+    fontSize: 20,
+    color: '#CCC',
+    width: 15,
+    height: 15,
+    textAlign: 'center',
+    marginRight: 7,
+    marginTop: 7,
+    cursor: 'pointer'
   },
   defaultStyleTitle: {
     fontSize: 14
   },
   defaultStyleTextWrapper: {
-    padding: 10,
+    padding: 0,
+    margin: '10px 10px 10px 70px',
+    letterSpacing: '0.4px'
   },
   defaultStyleText: {
+    margin: '10px 0px 0px 0px',
+    overflow: 'hidden',
+    cursor: 'default'
+  },
+  defaultStyleContextMessage: {
     margin: 0,
     overflow: 'hidden',
     cursor: 'default'
@@ -118,8 +133,9 @@ let config = {
   + ' <img src="" id="appIcon" />\n'
   + ' <img src="" id="image" />\n'
   + ' <div id="text">\n'
-  + '   <b id="title"></b>\n'
-  + '   <p id="message"></p>\n'
+  + '   <div id="title"></div>\n'
+  + '   <div id="message"></div>\n'
+  + '   <div id="contextMessage"></div>\n'
   + ' </div>\n'
   + ' <div id="close">⨯</div>\n'
   + '</div>\n'
@@ -346,7 +362,6 @@ function buildCloseNotificationSafely(closeFunc) {
 }
 
 ipc.on('electron-notify-close', function (event, winId, notificationObj) {
-  console.log('electron-notify-close')
   let closeFunc = buildCloseNotification(BrowserWindow.fromId(winId), notificationObj)
   buildCloseNotificationSafely(closeFunc)('close')
 })
