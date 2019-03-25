@@ -19,7 +19,7 @@ function setStyle(config) {
   setStyleOnDomElement(config.defaultStyleContainer, container)
   // Size and radius
   let style = {
-    height: config.height - 2 * config.borderRadius - 2 * config.defaultStyleContainer.padding,
+    height: '100%',
     width: config.width - 2 * config.borderRadius - 2 * config.defaultStyleContainer.padding,
     borderRadius: config.borderRadius + 'px'
   }

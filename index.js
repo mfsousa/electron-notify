@@ -91,27 +91,36 @@ let config = {
     width: 15,
     height: 15,
     textAlign: 'center',
-    marginRight: 7,
+    marginRight: 10,
     marginTop: 7,
     cursor: 'pointer'
   },
   defaultStyleTitle: {
-    fontSize: 14
+    fontSize: 14,
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis'
   },
   defaultStyleTextWrapper: {
     padding: 0,
-    margin: '10px 10px 10px 70px',
-    letterSpacing: '0.4px'
+    margin: '10px 10px 0 70px',
+    letterSpacing: '0.4px',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%'
   },
   defaultStyleText: {
     margin: '10px 0px 0px 0px',
     overflow: 'hidden',
-    cursor: 'default'
+    cursor: 'default',
+    flexGrow: 1,
+    maxHeight: '60px'
   },
   defaultStyleContextMessage: {
-    margin: 0,
-    overflow: 'hidden',
-    cursor: 'default'
+    height: 25,
+    textAlign: 'right',
+    paddingRight: 10,
+    color: 'gray'
   },
   defaultWindow: {
     alwaysOnTop: true,
