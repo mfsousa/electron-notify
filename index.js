@@ -243,7 +243,8 @@ let closedNotifications = {}
 // Give each notification a unique id
 let latestID = 0
 
-function notify(notification) {
+function notify(notification, options) {
+  setConfig(options || {})
   // Is it an object and only one argument?
   if (arguments.length === 1 && typeof notification === 'object') {
     // Use object instead of supplied parameters
