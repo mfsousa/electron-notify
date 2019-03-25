@@ -11,6 +11,7 @@ function setStyle(config) {
   let appIcon = notiDoc.getElementById('appIcon')
   let image = notiDoc.getElementById('image')
   let title = notiDoc.getElementById('title')
+  let text = notiDoc.getElementById('text')
   let close = notiDoc.getElementById('close')
   let message = notiDoc.getElementById('message')
   // Default style
@@ -33,6 +34,7 @@ function setStyle(config) {
   }
   setStyleOnDomElement(config.defaultStyleImage, image)
   setStyleOnDomElement(config.defaultStyleClose, close)
+  setStyleOnDomElement(config.defaultStyleTextWrapper, text)
   setStyleOnDomElement(config.defaultStyleTitle, title)
   setStyleOnDomElement(config.defaultStyleText, message)
 }

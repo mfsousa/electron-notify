@@ -90,6 +90,9 @@ let config = {
   defaultStyleTitle: {
     fontSize: 14
   },
+  defaultStyleTextWrapper: {
+    padding: 10,
+  },
   defaultStyleText: {
     margin: 0,
     overflow: 'hidden',
