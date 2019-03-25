@@ -71,13 +71,13 @@ function setContents(event, notificationObj) {
   closeButton.addEventListener('click', function(event) {
     console.log('close')
     event.stopPropagation()
-    ipc.sendTo(winId, 'electron-notify-close', winId, notificationObj)
+    ipc.send('electron-notify-close', winId, notificationObj)
   })
 
   // URL
   let container = notiDoc.getElementById('container')
   container.addEventListener('click', function() {
-    ipc.sendTo(winId, 'electron-notify-click', winId, notificationObj)
+    ipc.send('electron-notify-click', winId, notificationObj)
   })
 }
 
