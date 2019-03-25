@@ -99,27 +99,32 @@ let config = {
     fontSize: 14,
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    textOverflow: 'ellipsis'
+    textOverflow: 'ellipsis',
+    fontWeight: '600'
   },
   defaultStyleTextWrapper: {
     padding: 0,
-    margin: '10px 10px 0 70px',
+    margin: '10px 30px 0 70px',
     letterSpacing: '0.4px',
     display: 'flex',
     flexDirection: 'column',
-    height: '100%'
+    height: 'calc(100% - 10px)'
   },
   defaultStyleText: {
     margin: '10px 0px 0px 0px',
     overflow: 'hidden',
     cursor: 'default',
     flexGrow: 1,
-    maxHeight: '60px'
+    display: '-webkit-box',
+    '-webkitLineClamp': 3,
+    '-webkitBoxOrient': 'vertical'
   },
   defaultStyleContextMessage: {
     height: 25,
     textAlign: 'right',
-    paddingRight: 10,
+    paddingRight: 0,
+    paddingTop: 10,
+    paddingBottom: 5,
     color: 'gray'
   },
   defaultWindow: {

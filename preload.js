@@ -38,7 +38,7 @@ function setStyle(config) {
   setStyleOnDomElement(config.defaultStyleTextWrapper, text)
   setStyleOnDomElement(config.defaultStyleTitle, title)
   setStyleOnDomElement(config.defaultStyleText, message)
-  setStyleOnDomElement(config.contextMessage, contextMessage)
+  setStyleOnDomElement(config.defaultStyleContextMessage, contextMessage)
 }
 
 function setContents(event, notificationObj) {
