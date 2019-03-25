@@ -45,11 +45,11 @@ AnimationQueue.prototype.clear = function() {
 }
 
 let config = {
-  width: 300,
-  height: 65,
+  width: 450,
+  height: 125,
   padding: 10,
-  borderRadius: 5,
-  displayTime: 5000,
+  borderRadius: 1,
+  displayTime: 12000,
   animationSteps: 5,
   animationStepMs: 5,
   animateInParallel: true,
@@ -245,7 +245,7 @@ let closedNotifications = {}
 let latestID = 0
 
 function notify(notification, options) {
-  setConfig(options || {})
+  setConfig(options || config)
 
   notification.id = latestID
   latestID++
