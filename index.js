@@ -87,6 +87,9 @@ let config = {
     fontSize: 11,
     color: '#CCC'
   },
+  defaultStyleTitle: {
+    fontSize: 14
+  },
   defaultStyleText: {
     margin: 0,
     overflow: 'hidden',

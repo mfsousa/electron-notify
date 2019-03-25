@@ -10,6 +10,7 @@ function setStyle(config) {
   let container = notiDoc.getElementById('container')
   let appIcon = notiDoc.getElementById('appIcon')
   let image = notiDoc.getElementById('image')
+  let title = notiDoc.getElementById('title')
   let close = notiDoc.getElementById('close')
   let message = notiDoc.getElementById('message')
   // Default style
@@ -30,11 +31,9 @@ function setStyle(config) {
       display: 'none'
     }, appIcon)
   }
-  // Style image
   setStyleOnDomElement(config.defaultStyleImage, image)
-  // Style close button
   setStyleOnDomElement(config.defaultStyleClose, close)
-  // Remove margin from text p
+  setStyleOnDomElement(config.defaultStyleTitle, title)
   setStyleOnDomElement(config.defaultStyleText, message)
 }
 
