@@ -121,7 +121,7 @@ let config = {
   + '   <b id="title"></b>\n'
   + '   <p id="message"></p>\n'
   + ' </div>\n'
-  + ' <div id="close">X</div>\n'
+  + ' <div id="close">⨯</div>\n'
   + '</div>\n'
   + '</body>\n'
   + '</html>'
@@ -346,6 +346,7 @@ function buildCloseNotificationSafely(closeFunc) {
 }
 
 ipc.on('electron-notify-close', function (event, winId, notificationObj) {
+  console.log('electron-notify-close')
   let closeFunc = buildCloseNotification(BrowserWindow.fromId(winId), notificationObj)
   buildCloseNotificationSafely(closeFunc)('close')
 })
