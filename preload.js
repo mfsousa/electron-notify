@@ -43,13 +43,8 @@ function setContents(event, notificationObj) {
   if (notificationObj.sound) {
     // Check if file is accessible
     try {
-      // If it's a local file, check it's existence
-      // Won't check remote files e.g. http://
-      if (notificationObj.sound.match(/^file\:/) !== null
-      || notificationObj.sound.match(/^\//) !== null) {
-        let audio = new global.window.Audio(notificationObj.sound)
-        audio.play()
-      }
+      let audio = new global.window.Audio(notificationObj.sound)
+      audio.play()
     } catch (e) {
       log('electron-notify: ERROR could not find sound file: ' + notificationObj.sound.replace('file://', ''), e, e.stack)
     }
